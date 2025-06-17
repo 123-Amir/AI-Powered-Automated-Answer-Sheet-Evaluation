@@ -8,7 +8,7 @@ import Footer from "./Footer";
 import "./Signup.css";
 
 const API_BASE_URL =
-  import.meta.env.VITE_BACKEND_URL || "https://ai-evaluaite.onrender.com";
+  import.meta.env.VITE_BACKEND_URL || "https://ai-powered-automated-answer-sheet.onrender.com";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
