@@ -60,7 +60,7 @@ const Signup = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.open("https://ai-evaluaite.onrender.com/api/auth/google", "_self");
+    window.open("https://ai-powered-automated-answer-sheet.onrender.com/api/auth/google", "_self");
   };
   
   return (
