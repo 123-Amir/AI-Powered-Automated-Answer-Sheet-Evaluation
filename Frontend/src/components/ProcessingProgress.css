@@ -1,0 +1,93 @@
+.pp-root {
+  max-width: 480px;
+  margin: 60px auto;
+  background: linear-gradient(135deg, #ffffff, #fbfaf9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 36px 32px;
+  text-align: center;
+}
+
+.pp-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 22px;
+}
+
+.pp-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.pp-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.pp-step-icon {
+  width: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pp-step-done {
+  color: #1a8a4a;
+}
+
+.pp-step-active {
+  color: #111;
+}
+
+.pp-step-active .pp-step-icon {
+  animation: pp-pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes pp-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.pp-progress-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pp-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #333, #ff7b00);
+  border-radius: 999px;
+  transition: width 0.35s ease-out;
+}
+
+.pp-progress-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  margin-top: 8px;
+}
+
+.pp-message {
+  margin-top: 18px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  min-height: 18px;
+}

@@ -59,6 +59,7 @@ function Navbar() {
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><a href="/">Dashboard</a></li>
           <li><Link to="/forms">Forms</Link></li>
+          <li><Link to="/assessment">Assess Paper<span className="new-badge">New</span></Link></li>
           <li><Link to="/Board">White Board</Link></li>
           <li><Link to="/TopicPPTGenerator">Generate PPT<span className="new-badge">New</span></Link></li>
         </ul>
@@ -74,6 +75,7 @@ function Navbar() {
             <ul>
               <li><a href="/">Dashboard</a></li>
               <li><Link to="/forms">Forms</Link></li>
+              <li><Link to="/assessment">Assess Paper<span className="new-badge">New</span></Link></li>
               <li><Link to="/Board">White Board</Link></li>
               <li><Link to="/TopicPPTGenerator">Generate PPT<span className="new-badge">New</span></Link></li>
             </ul>

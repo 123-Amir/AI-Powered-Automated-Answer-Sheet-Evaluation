@@ -1,0 +1,252 @@
+.assess-page {
+  min-height: 100vh;
+  background: #f6f4f2;
+  padding: 24px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.assess-page-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assess-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111827;
+  background: linear-gradient(to right, #111827, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.assess-title-compact {
+  text-align: left;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.assess-subtitle {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin: 0 0 28px;
+}
+
+/* --- Upload state ------------------------------------------------- */
+
+.assess-upload-wrap {
+  width: 100%;
+  max-width: 720px;
+}
+
+.assess-upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.assess-primary-btn {
+  display: block;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #333, #ff7b00);
+  color: #fff;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.assess-primary-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.assess-primary-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.assess-start-error {
+  color: #c0392b;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* --- Error state ---------------------------------------------------- */
+
+.assess-error-card {
+  max-width: 440px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.assess-error-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #c0392b;
+  margin: 0 0 10px;
+}
+
+.assess-error-message {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+  margin: 0 0 20px;
+}
+
+/* --- Review state ---------------------------------------------------- */
+
+.assess-review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.assess-secondary-btn {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #111;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.assess-secondary-btn:hover {
+  transform: translateY(-1px);
+  border-color: #ff7b00;
+  color: #ea580c;
+}
+
+.assess-empty-banner {
+  background: #fff7e6;
+  color: #8a5a00;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 6px 0 16px;
+}
+
+.assess-review-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 320px;
+  gap: 16px;
+  height: calc(100vh - 190px);
+  min-height: 480px;
+}
+
+.assess-pane {
+  min-height: 0;
+}
+
+@media (max-width: 1180px) {
+  .assess-review-grid {
+    grid-template-columns: 220px minmax(0, 1fr) 280px;
+  }
+}
+
+@media (max-width: 980px) {
+  .assess-review-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .assess-pane-sidebar,
+  .assess-pane-viewer,
+  .assess-pane-details {
+    height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .assess-page {
+    padding: 14px;
+  }
+  .assess-upload-grid {
+    grid-template-columns: 1fr;
+  }
+  .assess-review-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* --- Phase 6: evaluate assessment control bar --- */
+
+.assess-grading-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.assess-evaluate-btn {
+  margin: 0;
+  padding: 10px 24px;
+  white-space: nowrap;
+}
+
+.assess-grading-hint {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.assess-grading-error {
+  color: #c0392b;
+}
+
+.assess-grading-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.assess-grading-progress-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.assess-grading-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #333, #ff7b00);
+  border-radius: 999px;
+  transition: width 0.3s ease-out;
+}
+
+@media (max-width: 640px) {
+  .assess-grading-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

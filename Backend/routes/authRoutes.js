@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
+const { isGoogleOAuthConfigured } = require("../utils/passport");
 const User = require("../models/User.js");
 
 const router = express.Router();
@@ -45,14 +46,31 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// Google OAuth is optional — see utils/passport.js. When
+// GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET are not set, no "google"
+// strategy was ever registered with passport, so this middleware
+// returns a clear, safe response instead of letting
+// passport.authenticate("google", ...) fail on an unknown strategy.
+function requireGoogleOAuthConfigured(req, res, next) {
+  if (!isGoogleOAuthConfigured) {
+    return res.status(503).json({
+      msg: "Google sign-in is not configured on this server.",
+      error: "GOOGLE_OAUTH_NOT_CONFIGURED",
+    });
+  }
+  next();
+}
+
 // Google OAuth
 router.get(
   "/google",
+  requireGoogleOAuthConfigured,
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 router.get(
   "/google/callback",
+  requireGoogleOAuthConfigured,
   passport.authenticate("google", { session: false }),
   (req, res) => {
     const token = jwt.sign({ id: req.user._id }, process.env.JWT_SECRET, {

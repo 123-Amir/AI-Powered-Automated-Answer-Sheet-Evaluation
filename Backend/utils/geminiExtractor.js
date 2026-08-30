@@ -20,7 +20,7 @@ const extractTextFromImage = async (imageBuffer) => {
       throw new Error("Invalid image buffer received.");
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
     const prompt = `Extract all the text from this handwritten answer sheet without skipping anything. 
 The image contains only answers (not questions). Each answer begins with Answer N: where N is the answer number in the given image.

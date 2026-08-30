@@ -1,0 +1,161 @@
+.qsidebar-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fbfaf9;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.qsidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.qsidebar-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.qsidebar-title-small {
+  font-size: 14px;
+}
+
+.qsidebar-count {
+  background: #ff7b00;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
+.qsidebar-empty {
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+  padding: 8px 2px;
+}
+
+.qsidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.qsidebar-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.qsidebar-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.qsidebar-item:focus-visible {
+  outline: 2px solid #ea580c;
+  outline-offset: 2px;
+}
+
+.qsidebar-item-selected {
+  background: #ffedd5;
+  border-color: #fb923c;
+}
+
+.qsidebar-item-selected .qsidebar-label,
+.qsidebar-item-selected .qsidebar-status-text {
+  color: #b45309;
+}
+
+.qsidebar-status-icon {
+  font-size: 14px;
+  font-weight: 700;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.qsidebar-status-matched {
+  color: #1a8a4a;
+}
+
+.qsidebar-status-unanswered {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.qsidebar-status-unmatched {
+  color: #b8860b;
+}
+
+.qsidebar-item-selected .qsidebar-status-matched {
+  color: #1a8a4a;
+}
+
+.qsidebar-item-selected .qsidebar-status-unanswered {
+  color: rgba(180, 83, 9, 0.55);
+}
+
+.qsidebar-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  flex: 1;
+}
+
+.qsidebar-status-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.qsidebar-score-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ea580c;
+  background: #fff1e0;
+  border-radius: 999px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+.qsidebar-unmatched-section {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.qsidebar-item-unmatched {
+  border-color: rgba(184, 134, 11, 0.35);
+  background: #fff9ec;
+}
+
+.qsidebar-item-unmatched.qsidebar-item-selected {
+  background: #b8860b;
+  border-color: #b8860b;
+}
+
+.qsidebar-item-unmatched.qsidebar-item-selected .qsidebar-label,
+.qsidebar-item-unmatched.qsidebar-item-selected .qsidebar-status-text,
+.qsidebar-item-unmatched.qsidebar-item-selected .qsidebar-status-icon {
+  color: #fff;
+}

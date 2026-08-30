@@ -16,6 +16,7 @@ import DetailAnalysis from "./DetailedAnalysis";
 import Board from "./Board";
 import Features from "./Features";
 import TopicPPTGenerator from "./TopicPPTGenerator";
+import Assessment from "./pages/Assessment";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -87,6 +88,10 @@ function App() {
             </ProtectedRoute>
           }
         />
+        {/* Phase 5: new assignment feature — intentionally NOT behind
+            ProtectedRoute, since the assignment explicitly requires no
+            authentication. Does not touch any existing route. */}
+        <Route path="/assessment" element={<Assessment />} />
       </Routes>
     </Router>
   );
